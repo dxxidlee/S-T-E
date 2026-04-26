@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./assets/PPNeueMontreal-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./assets/PPNeueMontreal-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --black: #000000;
+  --grey-007: #000000;
+  --grey-005: #000000;
+  --grey-003: #000000;
+  --grey-001: #ffffff;
+  --white: #ffffff;
+  --bg: #ffffff;
+  --bg-dark: #0a0e1a;
+  --text: var(--black);
+  --text-light: var(--grey-007);
+  --font-book: 400;
+  --font-medium: 500;
+  --side-margin: 20px;
+  --single-grid-width: calc(4.16667vw - var(--side-margin) * 2 / 24);
+  font-family: "PP Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (width <= 1024px) {
+  :root {
+    --single-grid-width: calc(8.33333vw - var(--side-margin) * 2 / 12);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: inherit;
+  font-weight: var(--font-book);
+  font-size: 12px;
+  color: var(--text);
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+button,
+a {
+  color: inherit;
+  font: inherit;
+}
+
+.ix-control-button {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  text-transform: capitalize;
+  transition:
+    background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ix-control-button:hover,
+.ix-control-button.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
